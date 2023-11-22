@@ -142,20 +142,20 @@ void set_vars(t_vars *vars)
 	vars->def = 50;
 	vars->julia = 0;
 }
-void set_julia(t_vars *vars)
+void set_julia(t_vars *vars, char *argv[])
 {
 	vars->julia = 1;
-	vars->jr = -0.7;
-	vars->ji = 0.27015;
+	vars->jr = atof(argv[2]); // TODO atof
+	vars->ji = atof(argv[3]);
 }
 
 int	main(int argc, char *argv[])
 {
 	t_vars		vars;
 
-	if (argc != 1 && (argc != 4 || strcmp(argv[1], "Julia")))
+	if (argc != 1 && (argc != 4 || strcmp(argv[1], "Julia"))) // TODO import strcmp
 	{
-		printf("Invalid ARG");
+		printf("Usage:\nMandelbrot: ./fractol\nJulia: ./fractol Julia <real number> <imaginary number>\n"); // TODO import printf
 		exit(1);
 	}
 	set_vars(&vars);
@@ -163,7 +163,7 @@ int	main(int argc, char *argv[])
 	mlx_mouse_hook(vars.win, mousepress, &vars);
 	mlx_hook(vars.win, 17, 0, finish, &vars);
     if (argc == 4)
-		set_julia(&vars);
+		set_julia(&vars, argv);
 	mlx_loop_hook(vars.mlx, render_next_frame, &vars);
 	mlx_loop(vars.mlx);
 	return (0);
