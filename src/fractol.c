@@ -163,9 +163,9 @@ int	main(int argc, char *argv[])
 {
 	t_vars		vars;
 
-	if (argc != 1 && (argc != 4 || ft_strncmp(argv[1], "Julia", 5)))
+	if ((argc != 2 || ft_strncmp(argv[1], "Mandelbrot", 10)) && (argc != 4 || ft_strncmp(argv[1], "Julia", 5)))
 	{
-		printf("Usage:\nMandelbrot: ./fractol\nJulia: ./fractol Julia <real number> <imaginary number>\n"); // TODO import printf
+		printf("[Usage]\nMandelbrot: ./fractol Mandelbrot\nJulia:      ./fractol Julia <real number> <imaginary number>\n"); // TODO import printf
 		exit(1);
 	}
 	set_vars(&vars);
