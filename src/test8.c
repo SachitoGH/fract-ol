@@ -153,11 +153,16 @@ int	main(int argc, char *argv[])
 {
 	t_vars		vars;
 
+	if (argc != 1 && (argc != 4 || strcmp(argv[1], "Julia")))
+	{
+		printf("Invalid ARG");
+		exit(1);
+	}
 	set_vars(&vars);
 	mlx_key_hook(vars.win, keypress, &vars);
 	mlx_mouse_hook(vars.win, mousepress, &vars);
 	mlx_hook(vars.win, 17, 0, finish, &vars);
-    if (argc == 4 && !strcmp(argv[1], "Julia"))
+    if (argc == 4)
 		set_julia(&vars);
 	mlx_loop_hook(vars.mlx, render_next_frame, &vars);
 	mlx_loop(vars.mlx);
