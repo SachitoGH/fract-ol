@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
 
 typedef struct s_complex
@@ -35,6 +34,17 @@ void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color)
 
 	dst = vars->addr + (y * vars->line_length + x * (vars->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
+}
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return (((unsigned char)s1[i] - (unsigned char)s2[i]));
 }
 
 double scale(double number, double new_min, double new_max, double old_min, double old_max)
@@ -153,7 +163,7 @@ int	main(int argc, char *argv[])
 {
 	t_vars		vars;
 
-	if (argc != 1 && (argc != 4 || strcmp(argv[1], "Julia"))) // TODO import strcmp
+	if (argc != 1 && (argc != 4 || ft_strncmp(argv[1], "Julia", 5)))
 	{
 		printf("Usage:\nMandelbrot: ./fractol\nJulia: ./fractol Julia <real number> <imaginary number>\n"); // TODO import printf
 		exit(1);
