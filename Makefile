@@ -40,7 +40,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	echo "$(YELLOW)Creating $(NAME)$(DEFAULT)"
 	$(CC) $(OBJ) $(LIBS) -o $(NAME)
-	echo "$(GREEN)fract-ol compiled!$(DEFAULT)"
+	echo "$(GREEN)$(NAME) compiled!$(DEFAULT)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	echo "$(YELLOW)Compiling: $<$(DEFAULT)"
@@ -49,7 +49,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	$(RM) $(OBJ_DIR)
-	echo "$(BLUE)fract-ol object files cleaned!$(DEFAULT)"
+	echo "$(BLUE)fract-ol object file cleaned!$(DEFAULT)"
 
 fclean: clean
 	$(RM) $(NAME)
