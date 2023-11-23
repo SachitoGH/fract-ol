@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:35 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 17:06:17 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:46:21 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 void	set_julia(t_vars *vars, char *argv[])
 {
 	vars->julia = 1;
-	vars->jul.real = ft_atof(argv[2]);
-	vars->jul.i = ft_atof(argv[3]);
+	vars->seed.real = ft_atof(argv[2]);
+	vars->seed.i = ft_atof(argv[3]);
 	vars->def = ft_atof(argv[4]);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:16 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 17:09:11 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:46:47 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	fractal(t_complex c, t_vars *vars)
 	if (vars->julia == 1)
 	{
 		z = c;
-		c = vars->jul;
+		c = vars->seed;
 	}
 	i = 0;
 	while (i < vars->def)

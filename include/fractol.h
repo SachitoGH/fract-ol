@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:18:45 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 17:16:00 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 18:46:50 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_vars
 	int			ship;
 	t_move		move;
 	t_data		data;
-	t_complex	jul;
+	t_complex	seed;
 	double		color;
 }	t_vars;
 
