@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   event.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/23 13:08:05 by ssenas-y          #+#    #+#             */
+/*   Updated: 2023/11/23 13:09:12 by ssenas-y         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	key_event(int keycode, t_vars *vars)
@@ -25,6 +37,7 @@ int	key_event(int keycode, t_vars *vars)
 int	mouse_event(int keycode, int x, int y, void *param)
 {
 	t_vars	*vars;
+
 	(void)x;
 	(void)y;
 	vars = (t_vars *)param;
