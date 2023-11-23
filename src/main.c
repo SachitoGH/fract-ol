@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:25 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 13:33:08 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:29:12 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	main(int argc, char *argv[])
 	if ((argc != 2 || ft_strncmp(argv[1], "Mandelbrot", 10)) 
 		&& (argc != 4 || ft_strncmp(argv[1], "Julia", 5)))
 	{
-		printf("\t\033[0;31m[Usage]\033[0m\n"); // TODO import printf
-		printf("\033[0;33mMandelbrot:\033[0m\t./fractol Mandelbrot\n");
-		printf("\033[0;33mJulia:\033[0m\t\t");
-		printf("./fractol  Julia <real number> <imaginary number>\n");
+		ft_printf("\t\033[0;31m[Usage]\033[0m\n");
+		ft_printf("\033[0;33mMandelbrot:\033[0m\t./fractol Mandelbrot\n");
+		ft_printf("\033[0;33mJulia:\033[0m\t\t");
+		ft_printf("./fractol  Julia <real number> <imaginary number>\n");
 		exit(1);
 	}
 	set_vars(&vars, argv);

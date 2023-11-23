@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:16 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 13:13:56 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:26:35 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color)
 }
 
 double	scale(double number, double new_min, 
-		double new_max, double old_min, double old_max)
+		double new_max, double old_max)
 {
-	return ((new_max - new_min) * (number - old_min) / 
-		(old_max - old_min) + new_min);
+	return ((new_max - new_min) * (number / old_max) + new_min);
 }
 
 int	fractal(t_complex c, t_vars *vars)
@@ -46,11 +45,11 @@ int	fractal(t_complex c, t_vars *vars)
 		z.real = tmp;
 		if (((z.real * z.real) + (z.i * z.i)) > 4)
 		{
-			return (scale(i + vars->color, 0x000000, 0xFFFFFF, 0, vars->def));
+			return (scale(i + vars->color, 0x000000, 0xFFFFFF, vars->def));
 		}
 		i++;
 	}
-	return (scale(i + vars->color, 0x000000, 0xFFFFFF, 0, vars->def));
+	return (scale(i + vars->color, 0x000000, 0xFFFFFF, vars->def));
 }
 
 int	render_next_frame(t_vars *vars)
@@ -65,8 +64,8 @@ int	render_next_frame(t_vars *vars)
 		j = 0;
 		while (j < 800)
 		{
-			c.real = (scale(i, -2, 1, 0, 799) * vars->move.zoom) + vars->move.x;
-			c.i = (scale(j, -1.5, 1.5, 0, 799) * vars->move.zoom) 
+			c.real = (scale(i, -2, 1, 799) * vars->move.zoom) + vars->move.x;
+			c.i = (scale(j, -1.5, 1.5, 799) * vars->move.zoom) 
 				+ vars->move.y;
 			my_mlx_pixel_put(vars, i, j, fractal(c, vars));
 			j++;

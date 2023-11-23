@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:18:45 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 13:55:19 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:26:11 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # include <mlx.h>
 # include <stdlib.h>
-# include <stdio.h>
+# include "ft_printf.h"
 
 typedef struct s_complex
 {
@@ -52,8 +52,7 @@ typedef struct s_vars
 double	ft_atof(const char *str);
 void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-double	scale(double number, double new_min, 
-			double new_max, double old_min, double old_max);
+double	scale(double number, double new_min, double new_max, double old_max);
 int		fractal(t_complex c, t_vars *vars);
 int		render_next_frame(t_vars *vars);
 int		finish(t_vars *vars);

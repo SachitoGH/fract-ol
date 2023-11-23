@@ -1,12 +1,13 @@
 # Variables
 
 NAME		= fractol
-INCLUDE		= include
+INCLUDE		= -Iinclude -Imlx -Iinclude/ft_printf
 SRC_DIR		= src
 OBJ_DIR		= obj
 CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra -I$(INCLUDE)
+CFLAGS		= -Wall -Werror -Wextra
 RM			= rm -rf
+LIBS		= -Lmlx -lmlx -framework OpenGL -framework AppKit -Linclude/ft_printf -lftprintf
 
 # Colors
 
@@ -38,13 +39,13 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	echo "$(YELLOW)Creating $(NAME)$(DEFAULT)"
-	$(CC) $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJ) $(LIBS) -o $(NAME)
 	echo "$(GREEN)fract-ol compiled!$(DEFAULT)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	echo "$(YELLOW)Compiling: $<$(DEFAULT)"
 	mkdir -p $(@D)
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ_DIR)
