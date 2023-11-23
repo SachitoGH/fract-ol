@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:05 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 13:09:12 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:42:14 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	key_event(int keycode, t_vars *vars)
 	{
 		finish(vars);
 	}
-	if (keycode == 18 && vars->color > 0)
+	if (keycode == 12 && vars->color > 0)
 		vars->color -= 5;
-	if (keycode == 19 && vars->color < 100)
+	if (keycode == 14 && vars->color < 100)
 		vars->color += 5;
 	if (keycode == 126 || keycode == 13)
 		vars->move.y -= 0.2 * vars->move.zoom;

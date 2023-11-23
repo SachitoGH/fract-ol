@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:18:45 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 15:26:11 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:16:00 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ typedef struct s_vars
 	void		*win;
 	int			def;
 	int			julia;
+	int			ship;
 	t_move		move;
 	t_data		data;
 	t_complex	jul;
 	double		color;
 }	t_vars;
 
+int		verif(int argc, char *argv[]);
 double	ft_atof(const char *str);
 void	my_mlx_pixel_put(t_vars *vars, int x, int y, int color);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

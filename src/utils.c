@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:35 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 13:55:04 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:06:17 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	set_julia(t_vars *vars, char *argv[])
 	vars->julia = 1;
 	vars->jul.real = ft_atof(argv[2]);
 	vars->jul.i = ft_atof(argv[3]);
+	vars->def = ft_atof(argv[4]);
 }
 
 void	set_vars(t_vars *vars, char *argv[])
@@ -42,11 +43,18 @@ void	set_vars(t_vars *vars, char *argv[])
 			&vars->data.bits_per_pixel, 
 			&vars->data.line_length, &vars->data.endian);
 	vars->win = mlx_new_window(vars->mlx, 800, 800, "FRACTAL!");
-	vars->def = 50;
 	vars->color = 0;
-	vars->julia = 0;
-	if (!ft_strncmp(argv[1], "Julia", 5))
+	if (!ft_strncmp(argv[1], "ship", 4))
+		vars->ship = 1;
+	else
+		vars->ship = 0;
+	if (!ft_strncmp(argv[1], "julia", 5))
 		set_julia(vars, argv);
+	else
+	{
+		vars->julia = 0;
+		vars->def = ft_atof(argv[2]);
+	}
 }
 
 double	ft_atof_fraction(const char *str, int i)

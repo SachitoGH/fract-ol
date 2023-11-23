@@ -6,7 +6,7 @@
 /*   By: ssenas-y <ssenas-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 13:08:16 by ssenas-y          #+#    #+#             */
-/*   Updated: 2023/11/23 15:26:35 by ssenas-y         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:09:11 by ssenas-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,37 @@ double	scale(double number, double new_min,
 	return ((new_max - new_min) * (number / old_max) + new_min);
 }
 
+void	absolute(t_complex *c)
+{
+	if (c->real < 0)
+		c->real = -c->real;
+	if (c->i < 0)
+		c->i = -c->i;
+}
+
 int	fractal(t_complex c, t_vars *vars)
 {
 	t_complex	z;
 	double		tmp;
 	int			i;
 
-	z.real = c.real;
-	z.i = c.i;
+	z.real = 0;
+	z.i = 0;
 	if (vars->julia == 1)
+	{
+		z = c;
 		c = vars->jul;
+	}
 	i = 0;
 	while (i < vars->def)
 	{
 		tmp = (z.real * z.real) - (z.i * z.i) + c.real;
 		z.i = 2 * z.real * z.i + c.i;
 		z.real = tmp;
+		if (vars->ship == 1)
+			absolute(&z);
 		if (((z.real * z.real) + (z.i * z.i)) > 4)
-		{
 			return (scale(i + vars->color, 0x000000, 0xFFFFFF, vars->def));
-		}
 		i++;
 	}
 	return (scale(i + vars->color, 0x000000, 0xFFFFFF, vars->def));
