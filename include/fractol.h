@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # include <mlx.h>
 # include <stdlib.h>
-# include "ft_printf.h"
+# include <stdio.h>
 
 typedef struct s_complex
 {

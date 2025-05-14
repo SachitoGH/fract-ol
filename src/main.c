@@ -28,14 +28,14 @@ int	verif(int argc, char *argv[])
 		&& (argc != 5 || ft_strncmp(argv[1], "julia", 5) || 
 			ft_atof(argv[4]) > 100 || ft_atof(argv[4]) < 1))
 	{
-		ft_printf("\t\033[0;31m[Usage]\033[0m\n");
-		ft_printf("\033[0;33mMandelbrot:\033[0m\t./fractol mandelbrot");
-		ft_printf(" <step 1-100>\n");
-		ft_printf("\033[0;33mJulia:\033[0m\t\t");
-		ft_printf("./fractol  julia <real number> <imaginary number>");
-		ft_printf(" <step 1-100>\n");
-		ft_printf("\033[0;33mBurning ship:\033[0m\t./fractol ship");
-		ft_printf(" <step 1-100>\n");
+		printf("\t\033[0;31m[Usage]\033[0m\n");
+		printf("\033[0;33mMandelbrot:\033[0m\t./fractol mandelbrot");
+		printf(" <step 1-100>\n");
+		printf("\033[0;33mJulia:\033[0m\t\t");
+		printf("./fractol  julia <real number> <imaginary number>");
+		printf(" <step 1-100>\n");
+		printf("\033[0;33mBurning ship:\033[0m\t./fractol ship");
+		printf(" <step 1-100>\n");
 		return (1);
 	}
 	return (0);

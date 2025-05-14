@@ -11,28 +11,28 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
+#include <X11/keysym.h>
 
-int	key_event(int keycode, t_vars *vars)
+int key_event(int keycode, t_vars *vars)
 {
-	if (keycode == 53)
-	{
+	if (keycode == XK_Escape)
 		finish(vars);
-	}
-	if (keycode == 12 && vars->color > 0)
+	if (keycode == XK_q && vars->color > 0)
 		vars->color -= 5;
-	if (keycode == 14 && vars->color < 100)
+	if (keycode == XK_e && vars->color < 100)
 		vars->color += 5;
-	if (keycode == 126 || keycode == 13)
+	if (keycode == XK_w || keycode == XK_Up)
 		vars->move.y -= 0.2 * vars->move.zoom;
-	if (keycode == 123 || keycode == 0)
+	if (keycode == XK_a || keycode == XK_Left)
 		vars->move.x -= 0.2 * vars->move.zoom;
-	if (keycode == 125 || keycode == 1)
+	if (keycode == XK_s || keycode == XK_Down)
 		vars->move.y += 0.2 * vars->move.zoom;
-	if (keycode == 124 || keycode == 2)
+	if (keycode == XK_d || keycode == XK_Right)
 		vars->move.x += 0.2 * vars->move.zoom;
 	render_next_frame(vars);
 	return (0);
 }
+
 
 int	mouse_event(int keycode, int x, int y, void *param)
 {

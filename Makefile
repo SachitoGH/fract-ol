@@ -1,13 +1,14 @@
 # Variables
 
 NAME		= fractol
-INCLUDE		= -Iinclude -Imlx -Iinclude/ft_printf
+INCLUDE 	= -Iinclude -Imlx
 SRC_DIR		= src
 OBJ_DIR		= obj
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 RM			= rm -rf
-LIBS		= -Lmlx -lmlx -framework OpenGL -framework AppKit -Linclude/ft_printf -lftprintf
+LIBS = -Lmlx -lmlx -lXext -lX11 -lm -lbsd
+
 
 # Colors
 
