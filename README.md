@@ -12,11 +12,17 @@ make
 ```
 
 ## Usage
-
+Mandelbrot:	
 ```sh
-Mandelbrot:	./fractol mandelbrot <step 1-100>
-Julia:		./fractol  julia <real number> <imaginary number> <step 1-100>
-Burning ship:	./fractol ship <step 1-100>
+./fractol mandelbrot <step 1-100>
+```
+Julia:
+```sh
+./fractol  julia <real number> <imaginary number> <step 1-100>
+```
+Burning ship:
+```sh
+./fractol ship <step 1-100>
 ```
 
 ## Features
